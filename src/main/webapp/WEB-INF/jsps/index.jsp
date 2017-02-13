@@ -44,7 +44,7 @@
         $("#submitmsg").click(function () {
             var msg = $("#usermsg");
             var clientmsg = msg.val();
-            $.post("/messages/create", {text: clientmsg, token: token, header: header});
+            $.post("/messages/create", {text: clientmsg});
             msg.attr("value", "");
             return false;
         });

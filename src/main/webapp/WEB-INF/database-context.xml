@@ -54,5 +54,8 @@
         <constructor-arg name="messagesDao" ref="messageDao"/>
     </bean>
 
+    <bean id="badWordsDao" class="ua.goit.offline.chat.dao.HibernateBadWordsDao">
+        <constructor-arg name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
 </beans>

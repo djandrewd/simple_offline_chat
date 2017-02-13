@@ -43,6 +43,9 @@ public class HashAuthenticationManager implements AuthenticationProvider {
         } catch (Exception e) {
             throw new UsernameNotFoundException("User with name: " + username + " not found!");
         }
+        if (user == null || StringUtils.isEmpty(user.getPassword())) {
+            throw new UsernameNotFoundException("User with name: " + username + " not found!");
+        }
         if (StringUtils.isEmpty(password)) {
             throw new BadCredentialsException("Password is empty!");
         }
