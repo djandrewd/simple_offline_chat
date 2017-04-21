@@ -10,7 +10,7 @@
 <body>
 <div id="wrapper">
     <div id="menu">
-        <p class="welcome">Welcome, <b><sec:authentication property="principal.name"/></b></p>
+        <p class="welcome">Welcome, user</p>
         <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
         <div style="clear:both"></div>
     </div>

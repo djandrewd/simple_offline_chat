@@ -10,6 +10,10 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <import resource="database-context.xml"/>
+
+    <context:component-scan base-package="ua.goit.offline5.chat"/>
+
     <mvc:annotation-driven/>
     <mvc:view-controller path="/" view-name="index"/>
 
