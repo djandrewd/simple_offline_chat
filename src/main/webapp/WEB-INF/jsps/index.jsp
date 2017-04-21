@@ -4,8 +4,8 @@
 <head>
     <title>Chat - Customer Module</title>
     <link href="<c:url value="/resources/style.css" />" rel="stylesheet" type="text/css"/>
-    <meta name="_csrf" content="${_csrf.token}"/>
-    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+    <%--<meta name="_csrf" content="${_csrf.token}"/>--%>
+    <%--<meta name="_csrf_header" content="${_csrf.headerName}"/>--%>
 </head>
 <body>
 <div id="wrapper">
@@ -31,11 +31,11 @@
                 window.location = '/login?logout';
             }
         });
-        var token = $("meta[name='_csrf']").attr("content");
-        var header = $("meta[name='_csrf_header']").attr("content");
-        $(document).ajaxSend(function (e, xhr, options) {
-            xhr.setRequestHeader(header, token);
-        });
+//        var token = $("meta[name='_csrf']").attr("content");
+//        var header = $("meta[name='_csrf_header']").attr("content");
+//        $(document).ajaxSend(function (e, xhr, options) {
+//            xhr.setRequestHeader(header, token);
+//        });
         //If user submits the form
         $("#submitmsg").click(function () {
             var msg = $("#usermsg");

@@ -15,7 +15,6 @@
     <context:component-scan base-package="ua.goit.offline5.chat"/>
 
     <mvc:annotation-driven/>
-    <mvc:view-controller path="/" view-name="index"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>

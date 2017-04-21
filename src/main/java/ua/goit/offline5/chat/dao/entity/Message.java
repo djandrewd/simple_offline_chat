@@ -7,7 +7,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.sql.Timestamp;
@@ -24,9 +23,10 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String text;
+    @Column(name = "time", updatable = false)
     private Timestamp time;
     @ManyToOne(fetch = FetchType.EAGER,
-               cascade = CascadeType.REFRESH)
+            cascade = CascadeType.REFRESH)
     private User user;
 
     public long getId() {
