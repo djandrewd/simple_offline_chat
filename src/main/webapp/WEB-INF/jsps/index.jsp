@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <title>Chat - Customer Module</title>
@@ -17,13 +16,10 @@
     </div>
 
     <div id="chatbox"></div>
-
-    <sec:authorize access="hasRole('WRITER')">
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg" size="63"/>
-            <input name="submitmsg" type="submit" id="submitmsg" value="Send"/>
-        </form>
-    </sec:authorize>
+    <form name="message" action="">
+        <input name="usermsg" type="text" id="usermsg" size="63"/>
+        <input name="submitmsg" type="submit" id="submitmsg" value="Send"/>
+    </form>
 </div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
