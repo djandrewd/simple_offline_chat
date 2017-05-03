@@ -1,0 +1,30 @@
+package ua.goit.offline5.chat.configuration;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import ua.goit.offline5.chat.dao.UsersDao;
+
+/**
+ * Security config
+ * <p>
+ * Created by andreymi on 4/24/2017.
+ */
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration extends
+        WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .formLogin();
+    }
+}
